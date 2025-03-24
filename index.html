@@ -19,6 +19,12 @@
             background-color: #0A192F;
             color: #F8FAFC;
         }
+        .container {
+            max-width: 1200px; /* Tăng kích thước tối đa để phù hợp với màn hình lớn hơn */
+            margin: 0 auto; /* Căn giữa nội dung */
+            padding-left: 2rem;  /* Khoảng trắng bên trái */
+            padding-right: 2rem; /* Khoảng trắng bên phải */
+        }
         .hero {
             padding: 80px 0;
             text-align: center;
@@ -332,91 +338,93 @@
     </style>
 </head>
 <body>
-    <section class="hero">
-        <h1>BotSphere</h1>
-        <p>
-            <span style="color:#00FFFF; font-weight:bold; display: block;">AI for Life Easier</span>
-            Không Chỉ Là Chatbot, Mà Là Giải Pháp Thông Minh Cho Cuộc Sống.
-            Chúng tôi không chỉ tạo ra chatbot. Chúng tôi xây dựng những trợ lý ảo thông minh, giúp bạn tối ưu công việc, kết nối nhanh hơn và tận hưởng cuộc sống dễ dàng hơn.
-        </p>
-        <div class="flex justify-center gap-4 mt-8">
-            <button class="cta" id="trial-button">Dùng thử ngay</button>
-            <button class="cta" id="register-button">Đăng ký</button>
-        </div>
-    </section>
-    <section class="features">
-        <h2>BotSphere – Trợ Lý AI Thông Minh, Đơn Giản Hóa Cuộc Sống Của Bạn</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Tư vấn chuyên sâu & cá nhân hóa
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Hỗ trợ ra quyết định thông minh
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Tự động hóa quy trình
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Kết nối thông tin nhanh chóng
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Học tập và nâng cao kiến thức
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Chăm sóc sức khỏe & đời sống
-            </div>
-        </div>
-    </section>
-    <section id="products" class="products">
-        <h2>Các sản phẩm nổi bật</h2>
-        <div class="circle-container">
-            <div class="product" onclick="showPopup('cofast', this)">Cofast</div>
-            <div class="product" onclick="showPopup('vi', this)">Vi's Corner</div>
-            <div class="product" onclick="showPopup('chief', this)">Chief</div>
-            <div class="product" onclick="showPopup('teacher', this)">Teacher</div>
-        </div>
-    </section>
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2 id="popup-title"></h2>
-            <ul id="popup-text">
-            </ul>
-            <button onclick="closePopup()">Đóng</button>
-        </div>
-    </div>
-    <div id="trial-popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeTrialPopup()">&times;</span>
-            <h2>Mã dùng thử</h2>
-            <div id="trial-code" class="trial-code-box" onclick="sendTrialCodeToZalo()"></div>
+    <div class="container">
+        <section class="hero">
+            <h1>BotSphere</h1>
             <p>
-                Nhấn vào mã trên để mở Zalo và gửi mã dùng thử cho chúng tôi.
+                <span style="color:#00FFFF; font-weight:bold; display: block;">AI for Life Easier</span>
+                Không Chỉ Là Chatbot, Mà Là Giải Pháp Thông Minh Cho Cuộc Sống.
+                Chúng tôi không chỉ tạo ra chatbot. Chúng tôi xây dựng những trợ lý ảo thông minh, giúp bạn tối ưu công việc, kết nối nhanh hơn và tận hưởng cuộc sống dễ dàng hơn.
             </p>
+            <div class="flex justify-center gap-4 mt-8">
+                <button class="cta" id="trial-button">Dùng thử ngay</button>
+                <button class="cta" id="register-button">Đăng ký</button>
+            </div>
+        </section>
+        <section class="features">
+            <h2>BotSphere – Trợ Lý AI Thông Minh, Đơn Giản Hóa Cuộc Sống Của Bạn</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Tư vấn chuyên sâu & cá nhân hóa
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Hỗ trợ ra quyết định thông minh
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Tự động hóa quy trình
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Kết nối thông tin nhanh chóng
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Học tập và nâng cao kiến thức
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Chăm sóc sức khỏe & đời sống
+                </div>
+            </div>
+        </section>
+        <section id="products" class="products">
+            <h2>Các sản phẩm nổi bật</h2>
+            <div class="circle-container">
+                <div class="product" onclick="showPopup('cofast', this)">Cofast</div>
+                <div class="product" onclick="showPopup('vi', this)">Vi's Corner</div>
+                <div class="product" onclick="showPopup('chief', this)">Chief</div>
+                <div class="product" onclick="showPopup('teacher', this)">Teacher</div>
+            </div>
+        </section>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2 id="popup-title"></h2>
+                <ul id="popup-text">
+                </ul>
+                <button onclick="closePopup()">Đóng</button>
+            </div>
         </div>
-    </div>
-    <div id="subscription-popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeSubscriptionPopup()">&times;</span>
-            <h2>Đăng ký gói dịch vụ Chatbot</h2>
-            <p>Vui lòng chọn gói dịch vụ phù hợp:</p>
-            <label for="package">Chọn gói:</label>
-            <select id="package">
-                <option value="1">Gói Chatbot 1 tháng - 1.000.000 VND</option>
-                <option value="6">Gói Chatbot 6 tháng - 4.000.000 VND</option>
-                <option value="12">Gói Chatbot 1 năm - 5.000.000 VND</option>
-            </select>
-            <p id="selected-package-info"></p>
-            <div class="payment-info">
-                <h3>Thông tin thanh toán</h3>
-                <p><strong>Ngân hàng:</strong> VCB 0071004369538</p>
-                <p><strong>Chủ tài khoản:</strong> Nguyễn Song Quỳnh Vi</p>
-                <p><strong>Thông tin chuyển khoản:</strong> <span id="payment-content"></span></p>
+        <div id="trial-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeTrialPopup()">&times;</span>
+                <h2>Mã dùng thử</h2>
+                <div id="trial-code" class="trial-code-box" onclick="sendTrialCodeToZalo()"></div>
+                <p>
+                    Nhấn vào mã trên để mở Zalo và gửi mã dùng thử cho chúng tôi.
+                </p>
             </div>
-            <div class="payment-confirmation">
-                <a id="zalo-payment-link" href="#" target="_blank" rel="noopener noreferrer">Gửi xác nhận thanh toán qua Zalo</a>
+        </div>
+        <div id="subscription-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeSubscriptionPopup()">&times;</span>
+                <h2>Đăng ký gói dịch vụ Chatbot</h2>
+                <p>Vui lòng chọn gói dịch vụ phù hợp:</p>
+                <label for="package">Chọn gói:</label>
+                <select id="package">
+                    <option value="1">Gói Chatbot 1 tháng - 1.000.000 VND</option>
+                    <option value="6">Gói Chatbot 6 tháng - 4.000.000 VND</option>
+                    <option value="12">Gói Chatbot 1 năm - 5.000.000 VND</option>
+                </select>
+                <p id="selected-package-info"></p>
+                <div class="payment-info">
+                    <h3>Thông tin thanh toán</h3>
+                    <p><strong>Ngân hàng:</strong> VCB 0071004369538</p>
+                    <p><strong>Chủ tài khoản:</strong> Nguyễn Song Quỳnh Vi</p>
+                    <p><strong>Thông tin chuyển khoản:</strong> <span id="payment-content"></span></p>
+                </div>
+                <div class="payment-confirmation">
+                    <a id="zalo-payment-link" href="#" target="_blank" rel="noopener noreferrer">Gửi xác nhận thanh toán qua Zalo</a>
+                </div>
+                <button id="payment-button" onclick="showPaymentInfo()">Thanh toán</button>
             </div>
-            <button id="payment-button" onclick="showPaymentInfo()">Thanh toán</button>
         </div>
     </div>
     <section id="chatbot">
@@ -506,11 +514,11 @@
         });
 
         function showPaymentInfo() {
-            const selectedPackage = packageSelect.value;
+             const selectedPackage = packageSelect.value;
             let packageName = '';
             let price = '';
 
-             if (selectedPackage === '1') {
+            if (selectedPackage === '1') {
                 packageName = 'Gói Chatbot 1 tháng';
                 price = '1.000.000 VND';
             } else if (selectedPackage === '6') {
@@ -520,7 +528,6 @@
                 packageName = 'Gói Chatbot 1 năm';
                 price = '5.000.000 VND';
             }
-
             alert(`Vui lòng chuyển khoản ${price} cho ${packageName}.`);
         }
 
