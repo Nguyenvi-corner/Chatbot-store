@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Skincare and Makeup AI</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: #F2F2F2; /* Màu nền sáng hơn */
+            color: #333333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #FFDBE5; /* Màu hồng nhạt */
+            background-image: linear-gradient(to bottom, #FFDBE5, #F2F2F2);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #FF69B4; /* Màu hồng đậm hơn */
+            text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666666;
+        }
+        .cta {
+            background-color: #FF69B4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            min-width: 150px;
+            text-align: center;
+        }
+        .cta:hover {
+            background-color: #FF1493;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+        }
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #FF69B4;
+            text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .feature {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #666666;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #EEEEEE;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            border-color: #FF69B4;
+        }
+        .product-details {
+            padding: 80px 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FF69B4;
+            text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-details p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #666666;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-details ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-details ul li {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            color: #666666;
+            display: flex;
+            align-items: flex-start;
+        }
+        .product-details ul li span {
+            font-weight: bold;
+            color: #FF69B4;
+            margin-right: 8px;
+            min-width: 24px;
+            text-align: center;
+        }
+        .product-details ul li::before {
+            content: '';
+            margin-right: 10px;
+        }
+        .product-details ul li i {
+            color: #FF69B4;
+            margin-right: 5px;
+        }
+        footer {
+            background-color: #0A192F;
+            color: #F8FAFC;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            border-top: 1px solid #4A5568;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero {
+            width: 100%;
+            text-align: center;
+        }
+
+        .product-details {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-details h2,
+        .product-details p,
+        .product-details ul {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .product-details ul {
+            padding-left: 20px;
+        }
+
+        .product-details ul li {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .product-details ul li span {
+            margin-right: 8px;
+            min-width: 24px;
+            text-align: center;
+        }
+        .highlighted-text {
+            font-weight: bold;
+            color: #FF69B4;
+            text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+        }
+        .back-to-home {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .feature-details {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #F8F8F8;
+            border-radius: 5px;
+            border: 1px solid #EEEEEE;
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        .feature-details ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-details ul li {
+            margin-bottom: 10px;
+            display: list-item;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>Skincare and Makeup AI 💄✨</h1>
+            <p>Giải pháp làm đẹp thông minh giúp các chị đẹp tỏa sáng mỗi ngày!</p>
+        </section>
+        <section id="product-details" class="product-details">
+            <h2>Skincare and Makeup AI - Trợ lý làm đẹp thông minh</h2>
+            <p>
+                Skincare and Makeup AI là trợ lý làm đẹp thông minh giúp các chị đẹp tỏa sáng mỗi ngày! Với khả năng tư vấn cá nhân hóa theo cảm xúc, sở thích và xu hướng mới nhất, chatbot sẽ giúp các chị tìm ra phong cách makeup phù hợp nhất để tự tin rạng rỡ cũng như cách chăm sóc da tối ưu phù hợp với từng loại cơ địa, mang đến vẻ đẹp và sự khoẻ khoắn của làn da.
+            </p>
+            <p>
+                Công năng chính của Chatbot Makeup Artist AI
+            </p>
+            <ul>
+                <li>
+                    <i class="material-icons text-pink-400">favorite</i>
+                    <span class="highlighted-text">Lắng nghe cảm xúc – Gợi ý phong cách phù hợp</span>
+                </li>
+                <div class="feature-details">
+                    <ul>
+                        <li>Trước khi tư vấn, em sẽ hỏi các chị về cảm xúc hôm nay để chọn makeup phù hợp nhất.</li>
+                        <li>Nếu cảm thấy nhẹ nhàng, em sẽ gợi ý phong cách trong veo, tự nhiên. Nếu muốn cá tính, em có ngay kiểu makeup sắc sảo, trendy.</li>
+                    </ul>
+                </div>
+                <li>
+                    <i class="material-icons text-pink-400">palette</i>
+                    <span class="highlighted-text">Tư vấn phong cách makeup theo xu hướng</span>
+                </li>
+                <div class="feature-details">
+                    <ul>
+                        <li>Cập nhật nhanh nhất các trào lưu makeup hot hit từ Á đến Âu.</li>
+                        <li>Gợi ý phong cách theo sự kiện: makeup công sở, tiệc tối, hẹn hò, dạo phố,…</li>
+                    </ul>
+                </div>
+                <li>
+                    <i class="material-icons text-pink-400">brush</i>
+                    <span class="highlighted-text">Chọn tone màu và sản phẩm phù hợp với từng loại da</span>
+                </li>
+                <div class="feature-details">
+                    <ul>
+                       <li>Hiểu rõ về undertone da để chọn phấn nền, son, má hồng chuẩn chỉnh.</li>
+                        <li>Đề xuất sản phẩm phù hợp với từng loại da: da khô, da dầu, da nhạy cảm,…</li>
+                    </ul>
+                </div>
+                <li>
+                    <i class="material-icons text-pink-400">face</i>
+                    <span class="highlighted-text">Hướng dẫn kỹ thuật makeup từ cơ bản đến nâng cao</span>
+                </li>
+                 <div class="feature-details">
+                    <ul>
+                        <li>Cách đánh nền lâu trôi, căng bóng hoặc lì mịn theo sở thích.</li>
+                        <li>Hướng dẫn kẻ mắt, đánh son tạo hiệu ứng môi căng mọng hoặc sắc nét.</li>
+                        <li>Bí quyết makeup hack mặt thon gọn, mắt to hơn, sống mũi cao tự nhiên.</li>
+                    </ul>
+                </div>
+                <li>
+                    <i class="material-icons text-pink-400">spa</i>
+                    <span class="highlighted-text">Chăm sóc da trước và sau makeup</span>
+                </li>
+                <div class="feature-details">
+                    <ul>
+                        <li>Gợi ý quy trình skincare giúp lớp nền mịn đẹp cả ngày.</li>
+                        <li>Cách tẩy trang và phục hồi da sau khi makeup để da luôn khỏe đẹp.</li>
+                    </ul>
+                </div>
+                <li>
+                    <i class="material-icons text-pink-400">stars</i>
+                    <span class="highlighted-text">Cá nhân hóa theo sở thích riêng của từng chị đẹp</span>
+                </li>
+                <div class="feature-details">
+                    <ul>
+                        <li>Nếu các chị có sẵn sản phẩm yêu thích, em sẽ hướng dẫn cách dùng chuẩn chỉnh.</li>
+                        <li>Nếu đang băn khoăn chưa biết chọn gì, em sẽ tư vấn sản phẩm phù hợp nhất!</li>
+                    </ul>
+                </div>
+            </ul>
+            <p>
+                Với Skincare and Makeup AI, mỗi ngày của các chị đều có thể trở thành một show diễn sắc đẹp, rạng rỡ và đầy tự tin! 💕✨
+            </p>
+        </section>
+        <div class="back-to-home">
+            <a href="./index.html" class="text-blue-400 hover:text-blue-300 transition duration-300 ease-in-out">
+                Về Trang Chủ
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Chatbot AI. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
