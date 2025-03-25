@@ -20,6 +20,12 @@
             background-color: #0A192F;
             color: #F8FAFC;
         }
+        .container {
+            max-width: 1200px; /* Tăng kích thước tối đa để có khoảng trống lớn hơn */
+            margin: 0 auto; /* Căn giữa nội dung */
+            padding-left: 20px; /* Thêm padding trái */
+            padding-right: 20px; /* Thêm padding phải */
+        }
         .hero {
             padding: 80px 0;
             text-align: center;
@@ -144,7 +150,7 @@
             color: #0F172A;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             border: 2px solid #33FFCC;
-            text-align: center; /* Thêm dòng này */
+            text-align: center;
         }
         .product:hover {
             transform: scale(1.1);
@@ -335,105 +341,107 @@
     </style>
 </head>
 <body>
-    <section class="hero">
-        <h1>BotSphere</h1>
-        <p>
-            <span style="color:#00FFFF; font-weight:bold; display: block;">AI for Life Easier</span>
-            Không Chỉ Là Chatbot, Mà Là Giải Pháp Thông Minh Cho Cuộc Sống.
-            Chúng tôi không chỉ tạo ra chatbot. Chúng tôi xây dựng những trợ lý ảo thông minh, giúp bạn tối ưu công việc, kết nối nhanh hơn và tận hưởng cuộc sống dễ dàng hơn.
-        </p>
-        <div class="flex justify-center gap-4 mt-8">
-            <button class="cta" id="trial-button">Dùng thử ngay</button>
-            <button class="cta" id="register-button">Đăng ký</button>
-        </div>
-    </section>
-    <section class="features">
-        <h2>BotSphere – Trợ Lý AI Thông Minh, Đơn Giản Hóa Cuộc Sống Của Bạn</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Tư vấn chuyên sâu & cá nhân hóa
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Hỗ trợ ra quyết định thông minh
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Tự động hóa quy trình
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Kết nối thông tin nhanh chóng
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Học tập và nâng cao kiến thức
-            </div>
-            <div class="feature">
-                <span style="font-weight: bold;">✅</span> Chăm sóc sức khỏe & đời sống
-            </div>
-        </div>
-    </section>
-    <section id="products" class="products">
-        <h2>Trải nghiệm các Chatbot thông minh – Chọn trợ lý phù hợp với bạn!</h2>
-        <div class="circle-container">
-            <a href="cofast.html" class="product">Cofast AI 🌍</a>
-            <a href="vi.html" class="product">Skincare and Makeup 💄✨</a>
-            <a href="chef.html" class="product">Chef AI 🥗</a>
-            <a href="emailmarketing.html" class="product">Email Marketing AI 💡</a>
-        </div>
-    </section>
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2 id="popup-title"></h2>
-            <ul id="popup-text">
-            </ul>
-            <button onclick="closePopup()">Đóng</button>
-        </div>
-    </div>
-    <div id="trial-popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeTrialPopup()">&times;</span>
-            <h2>Mã dùng thử</h2>
-            <div id="trial-code" class="trial-code-box" onclick="sendTrialCodeToZalo()"></div>
+    <div class="container">
+        <section class="hero">
+            <h1>BotSphere</h1>
             <p>
-                Nhấn vào mã trên để mở Zalo và gửi mã dùng thử cho chúng tôi.
+                <span style="color:#00FFFF; font-weight:bold; display: block;">AI for Life Easier</span>
+                Không Chỉ Là Chatbot, Mà Là Giải Pháp Thông Minh Cho Cuộc Sống.
+                Chúng tôi không chỉ tạo ra chatbot. Chúng tôi xây dựng những trợ lý ảo thông minh, giúp bạn tối ưu công việc, kết nối nhanh hơn và tận hưởng cuộc sống dễ dàng hơn.
             </p>
-        </div>
-    </div>
-    <div id="subscription-popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeSubscriptionPopup()">&times;</span>
-            <h2>Đăng ký gói dịch vụ Chatbot</h2>
-            <p>Vui lòng chọn gói dịch vụ phù hợp:</p>
-            <label for="package">Chọn gói:</label>
-            <select id="package">
-                <option value="1">Gói Chatbot 1 tháng - 1.000.000 VND</option>
-                <option value="6">Gói Chatbot 6 tháng - 4.000.000 VND</option>
-                <option value="12">Gói Chatbot 1 năm - 5.000.000 VND</option>
-            </select>
-            <p id="selected-package-info"></p>
-            <div class="payment-info">
-                <h3>Thông tin thanh toán</h3>
-                <p><strong>Ngân hàng:</strong> VCB 0071004369538</p>
-                <p><strong>Chủ tài khoản:</strong> Nguyễn Song Quỳnh Vi</p>
-                <p><strong>Thông tin chuyển khoản:</strong> <span id="payment-content"></span></p>
+            <div class="flex justify-center gap-4 mt-8">
+                <button class="cta" id="trial-button">Dùng thử ngay</button>
+                <button class="cta" id="register-button">Đăng ký</button>
             </div>
-            <div class="payment-confirmation">
-                <a id="zalo-payment-link" href="#" target="_blank" rel="noopener noreferrer">Gửi xác nhận thanh toán qua Zalo</a>
-            </div>
-            <button id="payment-button" onclick="showPaymentInfo()">Thanh toán</button>
-        </div>
-    </div>
-    <section id="chatbot">
-        <h2>Chatbot</h2>
-        <script>
-            window.lovinbotChatbotConfig =
-            {
-                token: 'EYo0ZfYTjSBZXUvO',
-                baseUrl: 'https://app.lovinbot.ai',
-                imageToggle: 'https://lovinbot-ai.b-cdn.net/upload_files/19a6178d-c899-437a-b42d-30774dca322e/11ddfde1-25e3-4d54-a004-2279d4c41f3c.png',
-                colorBg: '#d9a7a0',
-            }
-        </script>
         </section>
+        <section class="features">
+            <h2>BotSphere – Trợ Lý AI Thông Minh, Đơn Giản Hóa Cuộc Sống Của Bạn</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Tư vấn chuyên sâu & cá nhân hóa
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Hỗ trợ ra quyết định thông minh
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Tự động hóa quy trình
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Kết nối thông tin nhanh chóng
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Học tập và nâng cao kiến thức
+                </div>
+                <div class="feature">
+                    <span style="font-weight: bold;">✅</span> Chăm sóc sức khỏe & đời sống
+                </div>
+            </div>
+        </section>
+        <section id="products" class="products">
+            <h2>Trải nghiệm các Chatbot thông minh – Chọn trợ lý phù hợp với bạn!</h2>
+            <div class="circle-container">
+                <a href="cofast.html" class="product">Cofast AI 🌍</a>
+                <a href="Vi.html" class="product">Skincare and Makeup 💄✨</a>
+                <a href="Chief.html" class="product">Chef AI 🥗</a>
+                <a href="emailmarketing.html" class="product">Email Marketing AI 💡</a>
+            </div>
+        </section>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2 id="popup-title"></h2>
+                <ul id="popup-text">
+                </ul>
+                <button onclick="closePopup()">Đóng</button>
+            </div>
+        </div>
+        <div id="trial-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeTrialPopup()">&times;</span>
+                <h2>Mã dùng thử</h2>
+                <div id="trial-code" class="trial-code-box" onclick="sendTrialCodeToZalo()"></div>
+                <p>
+                    Nhấn vào mã trên để mở Zalo và gửi mã dùng thử cho chúng tôi.
+                </p>
+            </div>
+        </div>
+        <div id="subscription-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeSubscriptionPopup()">&times;</span>
+                <h2>Đăng ký gói dịch vụ Chatbot</h2>
+                <p>Vui lòng chọn gói dịch vụ phù hợp:</p>
+                <label for="package">Chọn gói:</label>
+                <select id="package">
+                    <option value="1">Gói Chatbot 1 tháng - 1.000.000 VND</option>
+                    <option value="6">Gói Chatbot 6 tháng - 4.000.000 VND</option>
+                    <option value="12">Gói Chatbot 1 năm - 5.000.000 VND</option>
+                </select>
+                <p id="selected-package-info"></p>
+                <div class="payment-info">
+                    <h3>Thông tin thanh toán</h3>
+                    <p><strong>Ngân hàng:</strong> VCB 0071004369538</p>
+                    <p><strong>Chủ tài khoản:</strong> Nguyễn Song Quỳnh Vi</p>
+                    <p><strong>Thông tin chuyển khoản:</strong> <span id="payment-content"></span></p>
+                </div>
+                <div class="payment-confirmation">
+                    <a id="zalo-payment-link" href="#" target="_blank" rel="noopener noreferrer">Gửi xác nhận thanh toán qua Zalo</a>
+                </div>
+                <button id="payment-button" onclick="showPaymentInfo()">Thanh toán</button>
+            </div>
+        </div>
+        <section id="chatbot">
+            <h2>Chatbot</h2>
+            <script>
+                window.lovinbotChatbotConfig =
+                {
+                    token: 'EYo0ZfYTjSBZXUvO',
+                    baseUrl: 'https://app.lovinbot.ai',
+                    imageToggle: 'https://lovinbot-ai.b-cdn.net/upload_files/19a6178d-c899-437a-b42d-30774dca322e/11ddfde1-25e3-4d54-a004-2279d4c41f3c.png',
+                    colorBg: '#d9a7a0',
+                }
+            </script>
+            </section>
+    </div>
     <footer>
         <p>© 2025 Chatbot AI. All Rights Reserved.</p>
     </footer>
@@ -581,4 +589,3 @@
     </script>
 </body>
 </html>
-
