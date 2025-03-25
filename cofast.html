@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofast - Giải pháp Logistics AI</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: #0A192F;
+            color: #F8FAFC;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #1B2A41;
+            background-image: linear-gradient(to bottom, #1B2A41, #0A192F);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #00FFFF;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #E2E8F0;
+        }
+        .cta {
+            background-color: #00FFFF;
+            color: #0F172A;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            min-width: 150px;
+            text-align: center;
+        }
+        .cta:hover {
+            background-color: #33FFCC;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #00FFFF;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .feature {
+            background-color: #1E293B;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #E2E8F0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #4A5568;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            border-color: #00FFFF;
+        }
+        .product-details {
+            padding: 80px 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00FFFF;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-details p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #E2E8F0;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-details ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-details ul li {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            color: #E2E8F0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .product-details ul li span {
+            font-weight: bold;
+            color: #00FFFF;
+            margin-right: 8px;
+            min-width: 24px;
+            text-align: center;
+        }
+        .product-details ul li::before {
+            content: '';
+            margin-right: 10px;
+        }
+        .product-details ul li i {
+            color: #00FFFF;
+            margin-right: 5px;
+        }
+        footer {
+            background-color: #0A192F;
+            color: #F8FAFC;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            border-top: 1px solid #4A5568;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero {
+            width: 100%;
+            text-align: center;
+        }
+
+        .product-details {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-details h2,
+        .product-details p,
+        .product-details ul {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .product-details ul {
+            padding-left: 20px;
+        }
+
+        .product-details ul li {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .product-details ul li span {
+            margin-right: 8px;
+            min-width: 24px;
+            text-align: center;
+        }
+        .highlighted-text {
+            font-weight: bold;
+            color: #FFD700; /* Màu vàng gold */
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* Hiệu ứng sáng như màu xanh */
+        }
+        .back-to-home {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>Cofast AI</h1>
+            <p>Giải pháp Logistics thông minh cho doanh nghiệp của bạn</p>
+        </section>
+        <section id="product-details" class="product-details">
+            <h2>Cofast AI - Giải pháp Logistics toàn diện</h2>
+            <p>
+                Cofast AI là trợ lý ảo được thiết kế đặc biệt cho ngành Logistics, giúp doanh nghiệp tối ưu hóa quy trình, giảm chi phí và nâng cao hiệu quả hoạt động.  Chúng tôi cung cấp các công cụ và thông tin cần thiết để bạn đưa ra quyết định nhanh chóng và chính xác.
+            </p>
+            <p>
+                Cofast AI có thể giúp bạn:
+            </p>
+            <ul>
+                <li><i class="material-icons text-blue-400">search</i>  <span class="highlighted-text">Tra cứu giá cước vận chuyển quốc tế</span> một cách nhanh chóng và chính xác.</li>
+                <li><i class="material-icons text-green-400">local_shipping</i>  <span class="highlighted-text">Tra cứu giá dịch vụ chuyển phát nhanh quốc tế</span> từ các nhà cung cấp hàng đầu.</li>
+                <li><i class="material-icons text-yellow-400">newspaper</i>  <span class="highlighted-text">Tra cứu thông tin Logistics</span> mới nhất.</li>
+                <li><i class="material-icons text-purple-400">settings_suggest</i>  <span class="highlighted-text">Tư vấn giải pháp Logistics</span> phù hợp với nhu cầu và ngân sách của bạn.</li>
+                <li><i class="material-icons text-red-400">assignment_turned_in</i>  <span class="highlighted-text">Hỗ trợ đặt booking và các yêu cầu khác</span> một cách dễ dàng và tiện lợi.</li>
+            </ul>
+            <p>
+                Cofast AI không chỉ là một công cụ, mà còn là đối tác tin cậy của bạn trong mọi hoạt động Logistics.
+            </p>
+        </section>
+        <div class="back-to-home">
+            <a href="/" class="text-blue-400 hover:text-blue-300 transition duration-300 ease-in-out">
+                Về Trang Chủ
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Chatbot AI. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        window.lovinbotChatbotConfig =
+        {
+          token: 'HIvNGQayNf60j6Rg',
+          baseUrl: 'https://app.lovinbot.ai',
+          imageToggle: 'https://lovinbot-ai.b-cdn.net/upload_files/19a6178d-c899-437a-b42d-30774dca322e/864698e6-c251-42a8-966c-02beb83bf392.png',
+          colorBg: '#109E58',
+        }
+      </script>
+      <script
+        src="https://cdn.jsdelivr.net/gh/lekimminhquan/chatbot@1.1.3/chatbot.min.js"
+        id="HIvNGQayNf60j6Rg"
+        defer
+      >
+      </script>
+</body>
+</html>
