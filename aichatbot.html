@@ -110,7 +110,7 @@
         .text-lg {
             font-size: 1.25rem;
         }
-        /* Thêm đoạn này để ẩn thanh zoom */
+        /* Ẩn thanh scroll trong Canva embed */
         .canva-embed iframe::-webkit-scrollbar {
             display: none;
         }
@@ -153,7 +153,8 @@
     <header class="bg-white py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
             <a href="#" class="flex items-center">
-                <img src="https://cofastnetwork.com/images/customer/header/cofast_header_logo.png" alt="Cofast Logo" class="mr-2" style="height: 30px;"> <span class="sr-only">Cofast</span>
+                <img src="https://cofastnetwork.com/images/customer/header/cofast_header_logo.png" alt="Cofast Logo" class="mr-2" style="height: 30px;"> 
+                <span class="sr-only">Cofast</span>
             </a>
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
@@ -219,19 +220,19 @@
             <p>&copy; 2024 Cofast. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- ✅ Chatbot mới -->
     <script>
-    window.customChatbotConfig = 
-    {
-      token: '9CTGwjRJGdoM35Uz',
-      baseUrl: 'https://easyai.com.vn/embed', 
-      colorBg: '#2972ff',
-    }
-  </script>
-  <script 
-    src="https://easyai.com.vn/js/custom-embedded-chatbot.min.js"
-    id="9CTGwjRJGdoM35Uz" 
-    defer
-  > 
-  </script>
+        window.customChatbotConfig = {
+            token: '9CTGwjRJGdoM35Uz',
+            baseUrl: 'https://easyai.com.vn/embed',
+            colorBg: '#2972ff',
+        }
+    </script>
+    <script 
+        src="https://easyai.com.vn/js/custom-embedded-chatbot.min.js"
+        id="9CTGwjRJGdoM35Uz" 
+        defer
+    ></script>
 </body>
 </html>
